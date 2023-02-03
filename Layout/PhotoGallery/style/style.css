@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template: repeat(9, 50fr) / 50vh;
+  gap: 10px;
+  justify-items: stretch;
+  align-items: stretch;
+  justify-content: center;
+  align-content: center;
+  margin: 20px;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+  .container {
+    grid-template: repeat(5, 50fr) / repeat(2, 50fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    grid-template: repeat(4, 50fr) / repeat(3, 50fr);
+  }
+  .item-two {
+    grid-column: 2 / 4;
+    grid-row: -5 / -3;
+  }
+}
